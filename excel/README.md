@@ -11,7 +11,7 @@ _**Note**: below listed features are still under design and review phase and hen
 |:---------------|:--------|:----------|
 |[Worksheet Protection](resources/worksheetprotection.md)| Represents the sorting for the Range. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-worksheetprotection)_|
 |[Worksheet Functions](resources/functions.md)| Allows developers to call Excel Functions directly from JavaScript and leverage Excel calculation engine. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-worksheetfunctions)_|
-|[Filter](resources/rangesort.md)| Represents filtering in Excel. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-sort)_|
+|[Filter](resources/filter.md)| Represents filtering in Excel. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-sort)_|
 |[Range Sort](resources/rangesort.md)| Represents sorting for the Range. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-sort)_|
 |[Table Sort](resources/tablesort.md)| Represents sorting for the table. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-sort)_|
 |[R1C1 Addressing](resources/range.md)|  R1C1 addressing is now available on Range objects. R1C1 format can also be used for addressing the range.| _[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-R1C1-addressing)_|
