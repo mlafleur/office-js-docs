@@ -12,18 +12,7 @@ Represents the filtering criteria applied to a column.
 |criterion1|string|The first criterion used to filter data. Used as an operator in the case of "custom" filtering.|
 |criterion2|string|The second criterion used to filter data. Only used as an operator in the case of "custom" filtering.|
 |dynamicCriteria|string|The dynamic criteria from the Excel.DynamicFilterCriteria set to apply on this column. Used with "dynamic" filtering. Possible values are: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate, Yesterday.|
-|filterOn|string|The property used by the filter to determine whether the values should stay visible. Possible values are: [‎2/‎10/‎2016 11:29 AM] 
-		BottomItems,
-		BottomPercent,
-		CellColor,
-		Dynamic,
-		FontColor,
-		Values,
-		TopItems,
-		TopPercent,
-		Icon,
-		Custom 
-|
+|filterOn|string|The property used by the filter to determine whether the values should stay visible. Possible values are: 	BottomItems, BottomPercent, CellColor, Dynamic, FontColor, Values, TopItems, TopPercent, Icon, Custom |
 |values|object[]|The set of values to be used as part of "values" filtering.|
 
 _See property access [examples.](#property-access-examples)_
