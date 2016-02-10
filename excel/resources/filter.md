@@ -17,7 +17,7 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Apply the given filter criteria on the given column. The same functionality can be achieved with any of the following helper method.|
+|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Apply the given filter criteria on the given column. The same functionality can be achieved with any of the following helper methods.|
 |[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Apply a "Bottom Item" filter to the column for the given number of elements.|
 |[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Apply a "Bottom Percent" filter to the column for the given percentage of elements.|
 |[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Apply a "Cell Color" filter to the column for the given color.|
@@ -35,7 +35,7 @@ None
 
 
 ### apply(criteria: FilterCriteria)
-Apply the given filter criteria on the given column.
+Apply the given filter criteria on the given column. The same functionality can be achieved with any of the following helper methods. 
 
 #### Syntax
 ```js
@@ -49,6 +49,28 @@ filterObject.apply(criteria);
 
 #### Returns
 void
+
+#### Example
+The followng example demostrate how to apply a custom filter with the generic apply() method.
+
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    var filterCriteria = { 
+		filterOn: Excel.FilterOn.custom,
+		criterion1: ">50",
+		operator: Excel.FilterOperator.and,
+		criterion2: "<100"
+    	} 
+    column.filter.apply(filterCriteria);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### applyBottomItemsFilter(count: number)
 Apply a "Bottom Item" filter to the column for the given number of elements.
@@ -66,6 +88,20 @@ filterObject.applyBottomItemsFilter(count);
 #### Returns
 void
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyBottomItemsFilter(3);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
 ### applyBottomPercentFilter(percent: number)
 Apply a "Bottom Percent" filter to the column for the given percentage of elements.
 
@@ -82,8 +118,22 @@ filterObject.applyBottomPercentFilter(percent);
 #### Returns
 void
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyBottomPercentFilter(30);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 ### applyCellColorFilter(color: string)
 Apply a "Cell Color" filter to the column for the given color.
+
 
 #### Syntax
 ```js
@@ -97,6 +147,20 @@ filterObject.applyCellColorFilter(color);
 
 #### Returns
 void
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyCellColorFilter('red');
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### applyCustomFilter(criteria1: string, criteria2: string, oper: FilterOperator)
 Apply a "Icon" filter to the column for the given criteria strings.
@@ -116,6 +180,21 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 #### Returns
 void
 
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyCustomFilter('>50','<100','and');
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
 ### applyDynamicFilter(criteria: string)
 Apply a "Dynamic" filter to the column.
 
@@ -131,6 +210,20 @@ filterObject.applyDynamicFilter(criteria);
 
 #### Returns
 void
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyDynamicFilter(Excel.DynamicFilterCriteria.aboveAverage);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### applyFontColorFilter(color: string)
 Apply a "Font Color" filter to the column for the given color.
@@ -148,6 +241,20 @@ filterObject.applyFontColorFilter(color);
 #### Returns
 void
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyFontColorFilter('red');
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
 ### applyIconFilter(icon: Icon)
 Apply a "Icon" filter to the column for the given icon.
 
@@ -163,6 +270,20 @@ filterObject.applyIconFilter(icon);
 
 #### Returns
 void
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyIconFilter(Excel.icons.fiveArrows.yellowDownInclineArrow);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### applyTopItemsFilter(count: number)
 Apply a "Top Item" filter to the column for the given number of elements.
@@ -180,6 +301,21 @@ filterObject.applyTopItemsFilter(count);
 #### Returns
 void
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyTopItemsFilter(3);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+
 ### applyTopPercentFilter(percent: number)
 Apply a "Top Percent" filter to the column for the given percentage of elements.
 
@@ -196,6 +332,19 @@ filterObject.applyTopPercentFilter(percent);
 #### Returns
 void
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyTopPercentFilter(30);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 ### applyValuesFilter(values: ()[])
 Apply a "Values" filter to the column for the given values.
 
@@ -212,6 +361,20 @@ filterObject.applyValuesFilter(values);
 #### Returns
 void
 
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.applyValuesFilter(['a','b']);
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
 ### clear()
 Clear the filter on the given column.
 
@@ -225,6 +388,20 @@ None
 
 #### Returns
 void
+
+#### Example
+```js
+Excel.run(function (ctx) { 
+    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
+    column.filter.clear();
+    return ctx.sync(); 
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
