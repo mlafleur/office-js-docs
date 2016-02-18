@@ -18,7 +18,7 @@ _**Note**: below listed features are still under design and review phase and hen
 |[Row Height, Column Width and Autofit](resources/range.md#mergeacross-boolean)| Enables developers to better display and format the worksheet by adjusting the row height and column width. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-range-autofit)_|
 |[Export Chart as Image](resources/chart.md#getimagewidth-number-height-number)|  Return a chart as a base64 string.| _[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-chart-getImage)_|
 |[Get used range](resources/range.md#getusedrangevaluesonlyboolean)| Returns the used range of the given range object. |_[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-range-getusedrange)_|
-|[Merge cells](resources/range.md#mergeacross-boolean)| Creates a merged cell from the specified Range object.
+|[Merge cells](resources/range.md#mergeacross-bool)| Creates a merged cell from the specified Range object.
 |[Covert Table to Range](resources/table.md#converttorange)|  Converts the table into a normal range of cells. All data is preserved.| _[Go](https://github.com/OfficeDev/office-js-docs/issues/new?title=ExcelJs-1.2-OpenSpec-table-convertToRange)_|
 
 
