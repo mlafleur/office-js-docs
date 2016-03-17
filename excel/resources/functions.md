@@ -24,7 +24,7 @@ Here's a sample table tracking sales of different tools in Excel. We will use th
 The following example will apply vlookup function to the table above and find the unit of Wrench sold in November.
 ```js
     Excel.run(function (ctx) {
-        var range = ctx.workbook.worksheets.getItem("Charts").getRange("A1:D4");
+        var range = ctx.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
         var unitSoldInNov = ctx.workbook.functions.vlookup("Wrench", range, 2, false);
         unitSoldInNov.load();
         return ctx.sync()
@@ -47,7 +47,7 @@ The following example will use vlookup function to first find the unit of Wrench
 
 ```js
     Excel.run(function (ctx) {
-        var range = ctx.workbook.worksheets.getItem("Charts").getRange("A1:D4");
+        var range = ctx.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
         var sumOfTwoLookups = ctx.workbook.functions.sum(
         	ctx.workbook.functions.vlookup("Wrench", range, 2, false), 
         	ctx.workbook.functions.vlookup("Wrench", range, 3, false)
